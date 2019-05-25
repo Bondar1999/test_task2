@@ -18,7 +18,7 @@ class CreateWorkersTable extends Migration
             $table->integer('id_user')->unsigned();
             $table->integer('wages_per_hour');
             $table->string('information', 255);
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('id_user')->references('id')->on('users');
         });
     }
 
@@ -29,6 +29,6 @@ class CreateWorkersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('workers');
+        Schema::dropIfExists('workers');
     }
 }

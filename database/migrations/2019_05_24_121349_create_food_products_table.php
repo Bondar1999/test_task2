@@ -18,8 +18,8 @@ class CreateFoodProductsTable extends Migration
             $table->integer('id_products')->unsigned();
             $table->integer('id_food')->unsigned();
             $table->integer('count');
-            $table->foreign('id_products')->references('id')->on('products')->onDelete('cascade');
-            $table->foreign('id_food')->references('id')->on('foods')->onDelete('cascade');
+            $table->foreign('id_products')->references('id')->on('products');
+            $table->foreign('id_food')->references('id')->on('foods');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateFoodProductsTable extends Migration
      */
     public function down()
     {
-        //
+         Schema::dropIfExists('food_products');
     }
 }

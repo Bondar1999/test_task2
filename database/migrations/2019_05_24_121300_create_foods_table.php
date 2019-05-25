@@ -20,7 +20,7 @@ class CreateFoodsTable extends Migration
             $table->integer('sell_price');
             $table->integer('id_worker')->unsigned();
             $table->integer('profit')->default(0);
-            $table->foreign('id_worker')->references('id')->on('workers')->onDelete('cascade');
+            $table->foreign('id_worker')->references('id')->on('workers');
         });
     }
 
@@ -31,6 +31,8 @@ class CreateFoodsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('foods');
+        //DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Schema::dropIfExists('foods');
+        //DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }
