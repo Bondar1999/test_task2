@@ -18,7 +18,6 @@ class CreateWorkersTable extends Migration
             $table->integer('id_user')->unsigned();
             $table->integer('wages_per_hour');
             $table->string('information', 255);
-            $table->primary('id');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });
     }

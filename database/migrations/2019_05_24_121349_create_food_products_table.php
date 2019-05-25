@@ -18,9 +18,8 @@ class CreateFoodProductsTable extends Migration
             $table->integer('id_products')->unsigned();
             $table->integer('id_food')->unsigned();
             $table->integer('count');
-            $table->primary('id');
             $table->foreign('id_products')->references('id')->on('products')->onDelete('cascade');
-            $table->foreign('id_food')->references('id')->on('food')->onDelete('cascade');
+            $table->foreign('id_food')->references('id')->on('foods')->onDelete('cascade');
         });
     }
 

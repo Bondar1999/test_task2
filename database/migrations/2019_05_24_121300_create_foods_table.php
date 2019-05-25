@@ -20,8 +20,7 @@ class CreateFoodsTable extends Migration
             $table->integer('sell_price');
             $table->integer('id_worker')->unsigned();
             $table->integer('profit')->default(0);
-            $table->primary('id');
-            $table->foreign('id_worker')->references('id')->on('worker')->onDelete('cascade');
+            $table->foreign('id_worker')->references('id')->on('workers')->onDelete('cascade');
         });
     }
 

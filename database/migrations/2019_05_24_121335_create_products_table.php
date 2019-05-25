@@ -18,7 +18,6 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->integer('count');
             $table->integer('buy_price');
-            $table->primary('id');
         });
     }
 
