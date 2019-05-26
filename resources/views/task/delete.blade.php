@@ -9,6 +9,7 @@
                 <div class="panel-body">
                 	<form action="/remove/byId/{{ $tableName }}" method="POST">
                 		{{ csrf_field() }}
+                        {{ method_field('PUT') }}
                 		<p>
                 			Введите id для таблицы {{ $tableName }}: 
 	                		<input type="text" name="id">

@@ -9,6 +9,7 @@
                 <div class="panel-body">
                 	<form action="/insert/{{ $tableName }}" method="POST">
                 		{{ csrf_field() }}
+                		{{ method_field('PUT') }}
                 		<table>
 		                	@foreach ($columns as $column)
 		                		<tr>

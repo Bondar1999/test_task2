@@ -9,6 +9,7 @@
                 <div class="panel-body">
                 	<form action="/task1/search" method="POST">
                 		{{ csrf_field() }}
+                        {{ method_field('PUT') }}
                 		<p>
                 			От 
                 			<input type="date" name="from">

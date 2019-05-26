@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -24,5 +25,24 @@ class HomeController extends Controller
     public function index()
     {
         return view('home', ['message' => 'You are logged in!']);
+    }
+
+    public function show(Request $request)
+    {
+        $tableName = $request->input('tableName');
+        $select = "SELECT column_name FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='".$tableName."'";
+        $columns = DB::select($select);
+        $content = DB::table($tableName)->simplePaginate(10);
+        return view('task/show', ['table' => $content, 'columns' => $columns, 'tableName' => $tableName, 'show' => true]);
+    }
+
+    public function task1()
+    {
+        return view('task/task1');
+    }
+
+     public function task2()
+    {
+        return view('task/task2');
     }
 }

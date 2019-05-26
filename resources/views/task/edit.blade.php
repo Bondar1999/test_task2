@@ -8,6 +8,7 @@
                 <div class="panel-heading">Параметры:</div>
                 <div class="panel-body">
                 	<form action="/update/{{ $tableName }}" method="POST">
+                        {{ method_field('PUT') }}
                         {{ csrf_field() }}
                         <table>
                             @foreach ($columns as $column)

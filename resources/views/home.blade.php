@@ -15,12 +15,14 @@
                     @endif
                     {{ $message }}
                     <p>
-                        <form action="/show" method="GET">
+                        <form action="/show" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('PUT') }}
                             <select name="tableName">
-                                <option value="food">Food</option>
+                                <option value="foods">Foods</option>
                                 <option value="products">Products</option>
                                 <option value="food_products">Food_products</option>
-                                <option value="worker">Worker</option>
+                                <option value="workers">Workers</option>
                             </select>
                             <button type="submit">
                                 Показать

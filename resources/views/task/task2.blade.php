@@ -9,6 +9,7 @@
                 <div class="panel-body">
                 	<form action="/task2/search" method="POST">
                 		{{ csrf_field() }}
+                        {{ method_field('PUT') }}
                         <p>
                             id сотрудника: 
                             <input type="text" name="id">
