@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Product;
 
 class HomeController extends Controller
 {
@@ -33,6 +34,7 @@ class HomeController extends Controller
         $select = "SELECT column_name FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='".$tableName."'";
         $columns = DB::select($select);
         $content = DB::table($tableName)->simplePaginate(10);
+        //$content = Product::all();
         return view('task/show', ['table' => $content, 'columns' => $columns, 'tableName' => $tableName, 'show' => true]);
     }
 
