@@ -35,7 +35,7 @@
 						</tr>
 				    	@endforeach
 					</table>
-					<!-- {//{ $table->links() }} -->
+					{{ $table->links() }}
                 </div>
             </div>
         </div>
